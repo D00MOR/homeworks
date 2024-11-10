@@ -6,14 +6,14 @@ if(!empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["text"])){
     $date=date("Y.m.d H:i:s");
     $file = "data.txt";
 
-    if (file_exists($file)) {
+    if(file_exists($file)){
     $f = fopen("data.txt","a");
     $string = "Имя пользователя: ".$name." | Почта: ".$email." | Сообщение: ".$text." | Время: ".$date."\n";
     fwrite($f, $string);
     fclose($f);
-    }else{
-        echo "Файл $file не существует";
-    }
+}else{
+    echo "файла $file не существует";
+}
 }else{
     echo "форма не заполнена";
 }

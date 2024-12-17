@@ -1,3 +1,10 @@
+<form action ="" method="POST">
+    <input type="text" placeholder="Имя" name="name">
+    <input type="text" placeholder="Почта" name="email">
+    <input type="textarea" placeholder="Введите сообщение" name="text">
+    <input type="submit" value="отправить">
+</form>
+
 <?php
 if(!empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["text"])){
     $name=$_POST["name"];
@@ -15,19 +22,12 @@ if(!empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["text"])){
     echo "файла $file не существует";
 }
 }else{
-    echo "форма не заполнена";
+    echo "форма не заполнена<br>";
 }
-?>
 
-<form action ="" method="POST">
-    <input type="text" placeholder="Имя" name="name">
-    <input type="text" placeholder="Почта" name="email">
-    <input type="textarea" placeholder="Введите сообщение" name="text">
-    <input type="submit" value="отправить">
-</form>
-
-<?php
-$f = fopen("data.txt", "r");
+$file = "data.txt";
+if(file_exists($file)){
+$f = fopen($file, "r");
 $data = "";
 while(!feof($f)){
 $data.=fread($f, 1024);
@@ -39,5 +39,8 @@ $array_count=count($filearray);
 for($i=$array_count-1;$i>=0;$i--){
     echo $filearray[$i];
     echo "<br>";
+}
+}else{
+    echo "файла $file не существует";
 }
 ?>

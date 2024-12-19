@@ -18,11 +18,12 @@ if(!empty($_POST["name"]) && !empty($_POST["email"]) && !empty($_POST["text"])){
     $string = "Имя пользователя: ".$name." | Почта: ".$email." | Сообщение: ".$text." | Время: ".$date."\n";
     fwrite($f, $string);
     fclose($f);
-}else{
-    echo "файла $file не существует";
+}else { 
+    $f = fopen("data.txt","a");
+    $string = "Имя пользователя: ".$name." | Почта: ".$email." | Сообщение: ".$text." | Время: ".$date."\n";
+    fwrite($f, $string);
+    fclose($f);
 }
-}else{
-    echo "форма не заполнена<br>";
 }
 
 $file = "data.txt";

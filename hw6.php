@@ -3,45 +3,44 @@
 <input type='submit'>
 </form>
 
-<script src="jquery-3.7.1.min.js"></script>
 <?php
 if(!empty($_POST["path"])){
 
 	$path = $_POST["path"];
     $files = array_diff(scandir($path), array('.', '..'));
-    foreach($files as $row){
-	echo $row."<button class='button1'>изменить</button><br>";
-    echo "<div id='name_form' hidden>";
+    $count = count($files);
+    for($i=2; $i<$count+2; $i++){
+	echo $files[$i]."<br>";
+    }
+    echo "<button class='button1'>изменить</button><br>";
     echo "<form action='' method='POST'>";
-    echo "<input type='text' name='rename1' id='rename' value='$row'>";
-    echo "<input type='text' name='rename1' id='rename2' placeholder='новое имя'>";
+    echo "<input type='text' name='rename1' placeholder='старое имя' value='$path/'>";
+    echo "<input type='text' name='rename2' placeholder='новое имя' value='$path/'>";
     echo "<input type='submit' name='change' id='submit' value='переименовать'>";
-    echo "<input type='text' name='delete1' id='del1' placeholder='имя для удаления'>";
-    echo "<button id='delete' name='del'>удалить</button>";
     echo "</form>";
-    echo "</div>";
+    echo "<form action='' method='POST'>";
+    echo "<input type='text' name='delete1' id='del1' placeholder='имя для удаления' value='$path/'>";
+    echo "<input type='submit' id='delete' name='del' value='удалить'>";
+    echo "</form>";
+
+echo "<form enctype='multipart/form-data' method='POST' action=''>";
+echo "<p><input type='file' name='upload'>";
+echo "<input type='submit' name='ok' value='Отправить'></p>";
+echo "</form>";
+
+if(isset($_POST['ok'])){
+    move_uploaded_file($_POST['upload'], $path.'/');
+    }
+}
     
-    if(isset($_GET['change'])){
-        $old_name = $_POST["rename"];
+    if(isset($_POST['change'])){
+        $old_name = $_POST["rename1"];
         $new_name = $_POST["rename2"];
         rename($old_name, $new_name);
     }
 
-    if(isset($_GET['del'])){
-        unlink($_POST['delete1']);
+    if(isset($_POST['del'])){
+        $file_del=$_POST['delete1'];
+        unlink($file_del);
     }
-}
 ?>
-<form enctype="multipart/form-data" method="post">
-   <p><input type="file" name="f">
-   <input type="submit" value="Отправить"></p>
-  </form>
-<?php 
-}
-?>
-
-<script>
-    $(".button1").on("click", function(){
-        $("#name_form").show();
-    });
-    </script>

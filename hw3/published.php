@@ -2,7 +2,7 @@
     <head>
         <title>Наши книги</title>
         <meta name="description" content="Информация о публикациях">
-        <meta name="keywords" content="публикация, книги, печать, издательство книг">
+        <meta name="keywords" content="публикация, опубликованные книги, печать, издательство книг">
         <meta name="viewport" content="width=976, maximum-scale=4, user-scalable=yes">
         <link rel="stylesheet" href="style1.css">
         <meta charset="utf-8">

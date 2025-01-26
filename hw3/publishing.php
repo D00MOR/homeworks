@@ -2,7 +2,7 @@
     <head>
         <title>Форма публикации</title>
         <meta name="description" content="Форма для заявки о публикации книги">
-        <meta name="keywords" content="публикация, книги, печать, издательство книг">
+        <meta name="keywords" content="публикация, книги, печать, издательство книг, публикация, заявка">
         <meta name="viewport" content="width=976, maximum-scale=4, user-scalable=yes">
         <link rel="stylesheet" href="style1.css">
         <meta charset="utf-8">

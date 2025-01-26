@@ -2,7 +2,7 @@
     <head>
         <title>Контакты</title>
         <meta name="description" content="Контакты для связи">
-        <meta name="keywords" content="публикация, книги, печать, издательство книг">
+        <meta name="keywords" content="публикация, книги, печать, контакты, адрес, издательство книг">
         <meta name="viewport" content="width=976, maximum-scale=4, user-scalable=yes">
         <link rel="stylesheet" href="style1.css">
         <meta charset="utf-8">

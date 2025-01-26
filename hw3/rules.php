@@ -2,7 +2,7 @@
     <head>
         <title>Правила приема книг</title>
         <meta name="description" content="Правила для приема материала">
-        <meta name="keywords" content="публикация, книги, печать, издательство книг">
+        <meta name="keywords" content="публикация, книги, печать, издательство книг, требования к оформлению, правила">
         <meta name="viewport" content="width=976, maximum-scale=4, user-scalable=yes">
         <link rel="stylesheet" href="style1.css">
         <meta charset="utf-8">

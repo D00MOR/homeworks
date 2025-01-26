@@ -2,7 +2,7 @@
     <head>
         <title>Цены</title>
         <meta name="description" content="Информация о ценах на услуги">
-        <meta name="keywords" content="публикация, книги, печать, издательство книг">
+        <meta name="keywords" content="публикация, книги, цены, продажа, печать, издательство книг">
         <meta name="viewport" content="width=976, maximum-scale=4, user-scalable=yes">
         <link rel="stylesheet" href="style1.css">
         <meta charset="utf-8">
